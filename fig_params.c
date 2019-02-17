@@ -29,3 +29,24 @@ int	ft_tetr_height(char *buff)
 	}
 	return (0);
 }
+
+void    ft_tetr_width(char *buff, t_fig *f)
+{
+        int width;
+
+        width = 1;
+        while (buff)
+        {
+            if (*buff == '#' && *(buff + 1) == '#' && *(buff + 5) == '#')
+                fig->width = 2;
+            buff++;
+        }
+        buff -= 21;
+        while (buff)
+        {
+            if (*buff == '#' && *(buff + 1) == '#')
+                width++;
+            buff++;
+        }
+        fig->width = width;                                                                                                          v
+}
